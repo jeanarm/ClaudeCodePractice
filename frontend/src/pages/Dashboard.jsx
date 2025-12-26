@@ -129,7 +129,9 @@ function Dashboard() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold text-gray-900">
-        Welcome back, {user?.email}
+        Welcome back, {user?.first_name && user?.last_name
+          ? `${user.first_name} ${user.last_name}`
+          : user?.email}
       </h1>
 
       {/* Stats Cards */}
