@@ -31,7 +31,8 @@ positions = {
 }
 
 employees_data = [
-    {"first_name": "John", "last_name": "Smith", "role": UserRole.ADMIN},
+    {"first_name": "Armel", "last_name": "NIZIGIYIMANA", "email": "armel.nizigiyimana@buychemjapan.com", "role": UserRole.ADMIN},
+    {"first_name": "John", "last_name": "Smith", "role": UserRole.MANAGER},
     {"first_name": "Sarah", "last_name": "Johnson", "role": UserRole.MANAGER},
     {"first_name": "Michael", "last_name": "Williams", "role": UserRole.MANAGER},
     {"first_name": "Emily", "last_name": "Brown", "role": UserRole.EMPLOYEE},
@@ -84,7 +85,7 @@ def seed_users_and_employees():
     created_users = []
 
     for i, emp_data in enumerate(employees_data):
-        email = f"{emp_data['first_name'].lower()}.{emp_data['last_name'].lower()}@company.com"
+        email = emp_data.get('email', f"{emp_data['first_name'].lower()}.{emp_data['last_name'].lower()}@company.com")
 
         # Create user
         user = User(
@@ -201,8 +202,8 @@ def main():
     print("-" * 40)
     print("Database seeded successfully!")
     print("\nSample login credentials:")
-    print("  Admin: john.smith@company.com / password123")
-    print("  Manager: sarah.johnson@company.com / password123")
+    print("  Admin: armel.nizigiyimana@buychemjapan.com / password123")
+    print("  Manager: john.smith@company.com / password123")
     print("  Employee: emily.brown@company.com / password123")
 
 if __name__ == "__main__":

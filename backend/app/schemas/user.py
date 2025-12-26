@@ -20,6 +20,8 @@ class UserResponse(BaseModel):
     email: str
     role: UserRole
     created_at: datetime
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
 
     class Config:
         from_attributes = True

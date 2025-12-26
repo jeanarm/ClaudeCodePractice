@@ -57,7 +57,9 @@ function Layout() {
             </div>
             <div className="flex items-center">
               <span className="text-sm text-gray-500 mr-4">
-                {user?.email} ({user?.role})
+                {user?.first_name && user?.last_name
+                  ? `${user.first_name} ${user.last_name}`
+                  : user?.email} ({user?.role})
               </span>
               <button
                 onClick={handleLogout}
